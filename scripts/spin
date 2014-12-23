@@ -1,0 +1,13 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+from __future__ import print_function
+import time
+
+from spinner import Spin
+
+
+if __name__ == '__main__':
+    print('Showing spinner animation for 3 seconds...')
+    with Spin():
+        time.sleep(3)
