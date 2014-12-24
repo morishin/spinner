@@ -7,7 +7,7 @@ import threading
 import time
 
 
-class SpinnerWriter:
+class SpinnerWriter(object):
     def __init__(self):
         self._spinner = self._spinner_gen()
 
@@ -25,7 +25,7 @@ class SpinnerWriter:
 
 class Spin(threading.Thread):
     def __init__(self):
-        threading.Thread.__init__(self)
+        super(Spin, self).__init__()
         self._exit = False
 
     def run(self):
@@ -41,4 +41,4 @@ class Spin(threading.Thread):
 
     def __exit__(self, exc_type, exc_val, exc_tb):
         self._exit = True
-        return True 
+        return True
