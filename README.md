@@ -3,9 +3,7 @@ spinner
 
 Installation
 ------------
-1. `git clone https://github.com/morishin/spinner.git`
-2. `cd spinner`
-3. `pip install .`
+`pip install git+ssh://git@github.com/morishin/spinner.git`
 
 Usage
 -------
