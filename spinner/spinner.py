@@ -19,13 +19,30 @@ class SpinnerWriter(object):
                 yield '/'
                 yield '-'
                 yield '\\'
+        elif type == 'shobon':
+            while 1:
+                yield '(´･ω･`)'
+                yield '( ´･ω･)'
+                yield '(  ´･ω)'
+                yield '(   ´･)'
+                yield '(    ´)'
+                yield '(`    )'
+                yield '(･`   )'
+                yield '(ω･`  )'
+                yield '(･ω･` )'
 
     def print_next_frame(self):
-        print('\033[s\033[1K' + next(self._spinner) + '\033[u', end='', file=sys.stderr)
+        print('\033[s\033[1K' + next(self._spinner) + '\033[0K\033[u', end='', file=sys.stderr)
 
 
 class Spin(threading.Thread):
     def __init__(self, type='bar', duration=.05):
+        """Spin Constructor
+
+        Keyword arguments:
+        type -- the type of animation object (default 'bar')
+        duration -- the frame duration (default .05)
+        """
         super(Spin, self).__init__()
         self._type = type
         self._duration = duration

@@ -11,3 +11,6 @@ if __name__ == '__main__':
     print("type 'bar' (default)")
     with Spin('bar'):
         time.sleep(3)
+    print("type 'shobon'")
+    with Spin('shobon', .06):
+        time.sleep(3)
