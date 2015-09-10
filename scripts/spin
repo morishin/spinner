@@ -8,6 +8,6 @@ from spinner import Spin
 
 
 if __name__ == '__main__':
-    print('Showing spinner animation for 3 seconds...')
-    with Spin():
+    print("type 'bar' (default)")
+    with Spin('bar'):
         time.sleep(3)
