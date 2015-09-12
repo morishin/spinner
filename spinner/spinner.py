@@ -2,9 +2,16 @@
 # -*- coding: utf-8 -*-
 
 from __future__ import print_function
+
 import sys
 import threading
 import time
+from enum import Enum
+
+
+class SpinnerType(Enum):
+    bar = 1
+    shobon = 2
 
 
 class SpinnerWriter(object):
@@ -13,13 +20,13 @@ class SpinnerWriter(object):
 
     @staticmethod
     def _spinner_gen(type):
-        if type == 'bar':
+        if type == SpinnerType.bar:
             while 1:
                 yield '|'
                 yield '/'
                 yield '-'
                 yield '\\'
-        elif type == 'shobon':
+        elif type == SpinnerType.shobon:
             while 1:
                 yield '(´･ω･`)'
                 yield '( ´･ω･)'
@@ -36,11 +43,11 @@ class SpinnerWriter(object):
 
 
 class Spin(threading.Thread):
-    def __init__(self, type='bar', duration=.05):
+    def __init__(self, type=SpinnerType.bar, duration=.05):
         """Spin Constructor
 
         Keyword arguments:
-        type -- the type of animation object (default 'bar')
+        type -- the type of animation object (default SpinnerType.bar)
         duration -- the frame duration (default .05)
         """
         super(Spin, self).__init__()

@@ -3,4 +3,4 @@
 
 from __future__ import absolute_import, unicode_literals
 
-from .spinner import Spin
+from .spinner import Spin, SpinnerType

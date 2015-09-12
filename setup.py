@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+import sys
 
 try:
     from setuptools import setup
@@ -9,6 +10,11 @@ except:
 __author__ = 'Shintaro Morikawa <sntr92@gmail.com>'
 __version__ = '0.1'
 
+requires = []
+
+if sys.version_info < (3, 4):
+    requires.append('enum34==1.0.4')
+
 setup(name='spinner',
       version=__version__,
       description='Show spinner animation during processing',
@@ -17,6 +23,7 @@ setup(name='spinner',
       license = "MIT License",
       url='https://github.com/morishin/spinner',
       packages=['spinner'],
+      install_requires=requires,
       scripts=['scripts/spin'],
       classifiers=[
           'Development Status :: 3 - Alpha',
@@ -29,4 +36,3 @@ setup(name='spinner',
           'Programming Language :: Python :: 3',
           'Programming Language :: Python :: 3.4'
       ])
-
