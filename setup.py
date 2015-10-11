@@ -15,7 +15,7 @@ requires = []
 if sys.version_info < (3, 4):
     requires.append('enum34==1.0.4')
 
-setup(name='spinner',
+setup(name='processing-spinner',
       version=__version__,
       description='Show spinner animation during processing',
       author=__author__,
@@ -32,7 +32,8 @@ setup(name='spinner',
           'License :: OSI Approved :: MIT License',
           'Programming Language :: Python',
           'Programming Language :: Python :: 2',
-          'Programming Language :: Python :: 2.7'
+          'Programming Language :: Python :: 2.7',
           'Programming Language :: Python :: 3',
-          'Programming Language :: Python :: 3.4'
+          'Programming Language :: Python :: 3.4',
+          'Programming Language :: Python :: 3.5',
       ])
