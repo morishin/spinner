@@ -12,6 +12,9 @@ from enum import Enum
 class SpinnerType(Enum):
     bar = 1
     shobon = 2
+    dot = 3
+    regiment = 4
+    stripe = 5
 
 
 class SpinnerWriter(object):
@@ -37,6 +40,27 @@ class SpinnerWriter(object):
                 yield '(･`   )'
                 yield '(ω･`  )'
                 yield '(･ω･` )'
+        elif type == SpinnerType.dot:
+            while 1:
+                yield ' ----'
+                yield '- ---'
+                yield '-- --'
+                yield '--- -'
+                yield '---- '
+        elif type == SpinnerType.regiment:
+            while 1:
+                yield ' ////'
+                yield '/ ///'
+                yield '// //'
+                yield '/// /'
+                yield '//// '
+        elif type == SpinnerType.stripe:
+            while 1:
+                yield ' ||||'
+                yield '| |||'
+                yield '|| ||'
+                yield '||| |'
+                yield '|||| '
 
     def print_next_frame(self):
         print('\033[s\033[1K' + next(self._spinner) + '\033[0K\033[u', end='', file=sys.stderr)
